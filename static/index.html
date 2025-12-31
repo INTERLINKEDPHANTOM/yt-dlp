@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT-DLP Downloader</title>
+    <link rel="manifest" href="/static/manifest.json">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#ff4757">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>YT <span class="heart">❤️</span> DLP</h1>
+            <p>Premium Video Downloader</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="input-group">
+                    <input type="text" id="videoUrl" placeholder="Paste YouTube Link here..." autocomplete="off">
+                    <button id="fetchBtn" class="btn-primary">
+                        <span class="btn-text">Get Info</span>
+                        <div class="loader hidden"></div>
+                    </button>
+                </div>
+            </section>
+
+            <section id="resultSection" class="result-section hidden">
+                <div class="video-card">
+                    <img id="thumbnail" src="" alt="Thumbnail" class="thumbnail">
+                    <div class="video-info">
+                        <h2 id="videoTitle">Video Title</h2>
+                        <div class="options">
+                            <select id="formatSelect">
+                                <!-- Options will be populated here -->
+                            </select>
+                            <button id="downloadBtn" class="btn-action">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="progressSection" class="progress-section hidden">
+                <div class="progress-info">
+                    <span id="statusText">Downloading...</span>
+                    <span id="percentText">0%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="progressBar" class="progress-bar"></div>
+                </div>
+                <div class="details">
+                    <span id="speedText">0 MB/s</span>
+                    <span id="etaText">ETA: --:--</span>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Made with ❤️ by Agent</p>
+        </footer>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>

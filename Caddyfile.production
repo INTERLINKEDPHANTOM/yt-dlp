@@ -1,3 +1,0 @@
-ytd.shivita.online {
-    reverse_proxy web:3000
-}
