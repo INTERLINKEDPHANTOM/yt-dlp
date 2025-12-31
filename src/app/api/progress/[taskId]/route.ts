@@ -3,7 +3,7 @@ import { tasks } from '../../../lib/tasks';
 
 export async function GET(
     request: Request,
-    { params }: { params: { taskId: string } }
+    { params }: { params: Promise<{ taskId: string }> }
 ) {
     const { taskId } = await params; // Next.js 15+ Params are async or sync depending on version, generic is safer
 
