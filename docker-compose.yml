@@ -1,0 +1,36 @@
+services:
+  app:
+    build: .
+    container_name: yt_dlp_app
+    restart: always
+    volumes:
+      - ./downloads:/app/downloads
+    expose:
+      - "8000"
+    networks:
+      - ytb_net
+
+  caddy:
+    image: caddy:latest
+    container_name: yt_dlp_caddy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - ytb_net
+    depends_on:
+      - app
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+
+networks:
+  ytb_net:
+    driver: bridge
